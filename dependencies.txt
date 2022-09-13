@@ -1,0 +1,15 @@
+click==8.0.3
+coloredlogs==15.0.1
+Flask==2.0.2
+Flask-Cors==3.0.10
+Flask-SQLAlchemy==2.5.1
+greenlet==1.1.2
+humanfriendly==10.0
+itsdangerous==2.0.1
+Jinja2==3.0.2
+MarkupSafe==2.0.1
+six==1.16.0
+SQLAlchemy==1.4.25
+SQLAlchemy-serializer==1.4.1
+Werkzeug==2.0.2
+typing-extensions==3.10.0.2

@@ -1,0 +1,963 @@
+{
+	"info": {
+		"_postman_id": "e9893c82-a4a6-4b35-a2b9-d342caec1982",
+		"name": "CRUD API - Requests",
+		"description": "## This is a application designed to create, read, update and delete cities and there residents.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17990352"
+	},
+	"item": [
+		{
+			"name": "City - Requests",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Lisbon\",\r\n    \"area\": 356.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.1.12:5000/city",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"12"
+							],
+							"port": "5000",
+							"path": [
+								"city"
+							]
+						},
+						"description": "### Here you can create a new city, it is only necessary to pass the \"name\" and the \"area\" in km2."
+					},
+					"response": [
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Debrecen\",\r\n    \"area\": 250.0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.1.12:5000/city",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"1",
+										"12"
+									],
+									"port": "5000",
+									"path": [
+										"city"
+									]
+								}
+							},
+							"status": "CREATED",
+							"code": 201,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/2.0.2 Python/3.10.6"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Sep 2022 15:32:42 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "\"Sucess: city created!\""
+						}
+					]
+				},
+				{
+					"name": "Read all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.1.12:5000/city",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"12"
+							],
+							"port": "5000",
+							"path": [
+								"city"
+							]
+						},
+						"description": "### Here you can read all the cities created."
+					},
+					"response": [
+						{
+							"name": "Read all",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.1.12:5000/city",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"1",
+										"12"
+									],
+									"port": "5000",
+									"path": [
+										"city"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "267"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/2.0.2 Python/3.10.6"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Sep 2022 15:33:15 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[{\"area\": 565.5, \"residents\": [], \"id_city\": 2, \"name\": \"Budapest\"}, {\"area\": 500.0, \"residents\": [], \"id_city\": 3, \"name\": \"Vienna\"}, {\"area\": 300.0, \"residents\": [], \"id_city\": 4, \"name\": \"Serra\"}, {\"area\": 250.0, \"residents\": [], \"id_city\": 5, \"name\": \"Debrecen\"}]"
+						}
+					]
+				},
+				{
+					"name": "Read by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.1.12:5000/city/5",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"12"
+							],
+							"port": "5000",
+							"path": [
+								"city",
+								"5"
+							]
+						},
+						"description": "StartFragment\n\n### Here you can read a specific city by id, it is only necessary to pass the id in the request."
+					},
+					"response": [
+						{
+							"name": "Read by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.1.12:5000/city/5",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"1",
+										"12"
+									],
+									"port": "5000",
+									"path": [
+										"city",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/2.0.2 Python/3.10.6"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Sep 2022 15:33:36 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[{\"area\": 250.0, \"residents\": [], \"id_city\": 5, \"name\": \"Debrecen\"}]"
+						}
+					]
+				},
+				{
+					"name": "Update by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Berlin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.1.12:5000/city/5",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"12"
+							],
+							"port": "5000",
+							"path": [
+								"city",
+								"5"
+							]
+						},
+						"description": "StartFragmentStartFragment\n\n### Here you can update a city, it is only necessary to pass the id in the request and to have at least 1 update."
+					},
+					"response": [
+						{
+							"name": "Update by id",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Berlin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.1.12:5000/city/5",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"1",
+										"12"
+									],
+									"port": "5000",
+									"path": [
+										"city",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/2.0.2 Python/3.10.6"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Sep 2022 15:34:08 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "\"Sucess: city updated!\""
+						}
+					]
+				},
+				{
+					"name": "Delete by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.1.12:5000/city/4",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"12"
+							],
+							"port": "5000",
+							"path": [
+								"city",
+								"4"
+							]
+						},
+						"description": "StartFragment\n\n### Here you can delete a city, it is only necessary to pass the id in the request."
+					},
+					"response": [
+						{
+							"name": "Delete by id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.1.12:5000/city/4",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"1",
+										"12"
+									],
+									"port": "5000",
+									"path": [
+										"city",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/2.0.2 Python/3.10.6"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Sep 2022 15:34:33 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "\"Sucess: city deleted!\""
+						}
+					]
+				}
+			],
+			"description": "### Here are all the requests you can use to create, read, update and delete cities."
+		},
+		{
+			"name": "Resident - Requests",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"Matheus\",\r\n    \"lastName\" : \"Oliveira\",\r\n    \"placeBirth\" : \"USA\",\r\n    \"dateBirth\" : \"2000-12-23\",\r\n    \"email\" : \"oliveira@email.com\",\r\n    \"residentPlace\" : \"Budapest\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.1.12:5000/resident",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"12"
+							],
+							"port": "5000",
+							"path": [
+								"resident"
+							]
+						},
+						"description": "StartFragment\n\n### Here you can create a new resident, it is only necessary to pass a few arguments: firstName, lastName, placeBirth, dateBirth (YYYY-mm-dd), email and residentPlace."
+					},
+					"response": [
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\" : \"Matheus\",\r\n    \"lastName\" : \"Oliveira\",\r\n    \"placeBirth\" : \"USA\",\r\n    \"dateBirth\" : \"2000-12-23\",\r\n    \"email\" : \"oliveira@email.com\",\r\n    \"residentPlace\" : \"Budapest\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.1.12:5000/resident",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"1",
+										"12"
+									],
+									"port": "5000",
+									"path": [
+										"resident"
+									]
+								}
+							},
+							"status": "CREATED",
+							"code": 201,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/2.0.2 Python/3.10.6"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Sep 2022 16:25:08 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "\"Sucess: resident created!\""
+						}
+					]
+				},
+				{
+					"name": "Read all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.1.12:5000/resident",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"12"
+							],
+							"port": "5000",
+							"path": [
+								"resident"
+							]
+						},
+						"description": "### Here you can read all the residents registred."
+					},
+					"response": []
+				},
+				{
+					"name": "Read by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.1.12:5000/resident/3",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"12"
+							],
+							"port": "5000",
+							"path": [
+								"resident",
+								"3"
+							]
+						},
+						"description": "### Here you can read a specific resident by id, it is only necessary to pass the id in the request."
+					},
+					"response": [
+						{
+							"name": "Read by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.1.12:5000/resident/3",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"1",
+										"12"
+									],
+									"port": "5000",
+									"path": [
+										"resident",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "161"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/2.0.2 Python/3.10.6"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Sep 2022 16:25:27 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[{\"id_resident\": 3, \"firstName\": \"Matheus\", \"lastName\": \"Oliveira\", \"placeBirth\": \"USA\", \"dateBirth\": \"2000-12-23\", \"email\": \"oliveira@email.com\", \"id_city\": 2}]"
+						}
+					]
+				},
+				{
+					"name": "Update by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dateBirth\" : \"2001-05-02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.1.12:5000/resident/3",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"12"
+							],
+							"port": "5000",
+							"path": [
+								"resident",
+								"3"
+							]
+						},
+						"description": "### Here you can update a resident, it is only necessary to pass the id in the request and to have at least 1 update."
+					},
+					"response": [
+						{
+							"name": "Update by id",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"dateBirth\" : \"2001-05-02\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.1.12:5000/resident/3",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"1",
+										"12"
+									],
+									"port": "5000",
+									"path": [
+										"resident",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/2.0.2 Python/3.10.6"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Sep 2022 16:25:36 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "\"Sucess: resident updated!\""
+						}
+					]
+				},
+				{
+					"name": "Delete  by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.1.12:5000/resident/3",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"12"
+							],
+							"port": "5000",
+							"path": [
+								"resident",
+								"3"
+							]
+						},
+						"description": "StartFragment\n\n### Here you can delete a resident, it is only necessary to pass the id in the request."
+					},
+					"response": [
+						{
+							"name": "Delete  by id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.1.12:5000/resident/3",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"1",
+										"12"
+									],
+									"port": "5000",
+									"path": [
+										"resident",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/2.0.2 Python/3.10.6"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Sep 2022 16:25:42 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "\"Sucess: resident deleted!\""
+						}
+					]
+				}
+			],
+			"description": "## Here are all the requests you can use to create, read, update and delete residents."
+		},
+		{
+			"name": "Create Tables",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.12:5000/create_tables",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"12"
+					],
+					"port": "5000",
+					"path": [
+						"create_tables"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Tables",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.1.12:5000/create_tables",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"12"
+							],
+							"port": "5000",
+							"path": [
+								"create_tables"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.10.6"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 Sep 2022 15:27:34 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "Sucess: tables created!"
+				}
+			]
+		}
+	]
+}
