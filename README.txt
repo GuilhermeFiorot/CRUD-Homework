@@ -1,4 +1,4 @@
-Welcome Peter and Istvan
+Welcome
 
 This is my API project to solve the Cities and Residents homework.
 
