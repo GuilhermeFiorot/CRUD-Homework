@@ -1,6 +1,6 @@
 from flask import request
 from utils.response_api import ResponseJsonApi
-from models.Tables import City
+from models.City import City
 from utils.logger import getLoggerAplication
 from utils.databaseFunctions import create, update, delete
 
